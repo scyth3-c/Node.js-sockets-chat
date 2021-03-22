@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="ico.png">
+    <title>Home</title>
+</head>
+<body>
+    <style>
+        body{
+           background: linear-gradient(96deg,rgb(50, 54, 53), rgb(40, 48, 46 ));
+           font-family: 'Pangolin', cursive;
+        }
+        p {
+            font:italic;
+        }
+    </style>
+<div class="navbar navbar-dark bg-secondary p-1" id="alertas">
+  <p class=" text-white font-weight-bold m-3">BLOOP  RANDOMCHAT</p>
+  <p class=" text-white font-weight-bold m-3 float-center">bohorquez</p>
+</div>
+
+<div class="container p-4 float-center">
+  <div class="card card-boby overflow-scroll">
+      
+        <table>
+            <thead>
+                <th class="text-secondary">Salida</th>
+            </thead>
+            <tbody>
+                <td> <div class="card card-body m-2" id="salida" style="height: 280px; border-radius: 10px;"></div> </td>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+              <th  class="text-secondary">usuario</th>
+              <th  class="text-secondary">Mensaje</th>
+            </thead>
+            <tbody>
+                <td><input type="text" id="usuario" class="form-control" placeholder="guest" value="guest" /></td>
+                <td><input type="text" id="mensaje"  class="form-control" onkeypress="send(event)" placeholder="..."/></td>
+            </tbody>
+          </table>
+     
+    
+       <button class="btn btn-secondary p-2 m-2" id="enviar">Enviar</button>
+  </div>
+</div>
+
+<div class="container" style="display: flex;"> 
+    <button class="btn btn-sm btn-secondary p-2" style="height: 35px; position: relative;" onclick="reset()" >limpiar</button>
+  <div class="col-md-2">
+        <select class="form-control" name="color" id="color">
+            <option value="0" class="text-primary" >Azul</option>
+            <option value="1" class="text-success" >Verde</option>
+            <option value="2" class="text-warning">Naranja</option>
+            <option value="3" class="text-danger">Rojo</option>
+            <option value="4" class="text-info" selected >color de msg</option>
+            
+               </select>
+  </div>
+ <div class="p-3"> <p class="text-secondary h6" id="users">0 usuario</p>
+ 
+</div>
+   
+
+ <script src="/socket.io/socket.io.js" charset="utf-8"></script>
+<script src="app.js" charset="utf-8"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+</body>
+</html>
